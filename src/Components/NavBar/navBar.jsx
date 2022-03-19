@@ -28,9 +28,9 @@ const NavBar = () => {
 
   // Component
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <CssBaseline />
-      <Container maxWidth="{false}">
+      <Container maxWidth="{false}" style={{ backgroundColor: "#C70505" }}>
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -85,16 +85,6 @@ const NavBar = () => {
                   </Link>
                 </Typography>
               </MenuItem>
-              <MenuItem key="AboutMe" onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
-                  <Link
-                    to="/aboutMe"
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
-                    About Me
-                  </Link>
-                </Typography>
-              </MenuItem>
               <MenuItem key="Projects" onClick={handleCloseNavMenu}>
                 <Typography textAlign="center">
                   <Link
@@ -102,6 +92,16 @@ const NavBar = () => {
                     style={{ textDecoration: "none", color: "black" }}
                   >
                     Projects
+                  </Link>
+                </Typography>
+              </MenuItem>
+              <MenuItem key="AboutMe" onClick={handleCloseNavMenu}>
+                <Typography textAlign="center">
+                  <Link
+                    to="/aboutMe"
+                    style={{ textDecoration: "none", color: "black" }}
+                  >
+                    About Me
                   </Link>
                 </Typography>
               </MenuItem>
@@ -145,18 +145,6 @@ const NavBar = () => {
               </Link>
             </Button>
             <Button
-              key="About Me"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, display: "block" }}
-            >
-              <Link
-                to="/aboutMe"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                About Me
-              </Link>
-            </Button>
-            <Button
               key="Projects"
               onClick={handleCloseNavMenu}
               sx={{ my: 2, display: "block" }}
@@ -166,6 +154,18 @@ const NavBar = () => {
                 style={{ textDecoration: "none", color: "white" }}
               >
                 Projects
+              </Link>
+            </Button>
+            <Button
+              key="About Me"
+              onClick={handleCloseNavMenu}
+              sx={{ my: 2, display: "block" }}
+            >
+              <Link
+                to="/aboutMe"
+                style={{ textDecoration: "none", color: "white" }}
+              >
+                About Me
               </Link>
             </Button>
             <Button

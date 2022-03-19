@@ -1,6 +1,7 @@
 //import "./App.css";
 import "@mui/material";
 import NavBar from "./Components/NavBar/navBar.jsx";
+import Home from "./Components/Home/home.jsx";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
         <div className="content">
           <Switch>
             <Route exact path="/">
-              <div>Home</div>
+              <Home />
             </Route>
             <Route path="/aboutMe">
               <div>About Me</div>
