@@ -33,20 +33,18 @@ const Home = () => {
       }}
     >
       <CssBaseline />
-      <Container sx={{ pt: "100px" }}>
-        <Typography variant="h2" align="center">
-          Hey there, I'm
-        </Typography>
-        <Typography variant="h1" align="center">
-          Thomas Chung
-        </Typography>
-        <Typography
-          variant="h2"
-          align="center"
-          ref={typeWriter}
-          style={{ color: "#C70505" }}
-        ></Typography>
-      </Container>
+      <Typography variant="h2" align="center">
+        Hey there, I'm
+      </Typography>
+      <Typography variant="h1" align="center">
+        Thomas Chung
+      </Typography>
+      <Typography
+        variant="h2"
+        align="center"
+        ref={typeWriter}
+        style={{ color: "#C70505" }}
+      ></Typography>
     </Container>
   );
 };

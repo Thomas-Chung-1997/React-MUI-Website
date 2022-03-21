@@ -2,7 +2,8 @@
 import "@mui/material";
 import NavBar from "./Components/NavBar/navBar.jsx";
 import Home from "./Components/Home/home.jsx";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import AboutMe from "./Components/AboutMe/aboutMe.jsx";
+import Contact from "./Components/Contact/contact.jsx";
 
 function App() {
   return (
@@ -15,13 +16,13 @@ function App() {
               <Home />
             </Route>
             <Route path="/aboutMe">
-              <div>About Me</div>
+              <AboutMe />
             </Route>
             <Route path="/projects">
               <div>Projects</div>
             </Route>
             <Route path="/contact">
-              <div>Contact</div>
+              <Contact />
             </Route>
           </Switch>
         </div>
