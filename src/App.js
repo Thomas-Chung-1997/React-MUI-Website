@@ -1,5 +1,7 @@
 //import "./App.css";
 import "@mui/material";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+
 import NavBar from "./Components/NavBar/navBar.jsx";
 import Home from "./Components/Home/home.jsx";
 import AboutMe from "./Components/AboutMe/aboutMe.jsx";
