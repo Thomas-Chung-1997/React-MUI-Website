@@ -1,9 +1,18 @@
-import { Container, CssBaseline, Typography } from "@mui/material";
+// Component imports
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import CssBaseline from "@mui/material/CssBaseline";
+import IconButton from "@mui/material/IconButton";
+import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import * as React from "react";
 import { init } from "ityped";
 import { useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
+import "../../globals.css";
 
+// Home component
 const Home = () => {
+  // Event handlers
   const typeWriter = useRef();
 
   useEffect(() => {
@@ -21,14 +30,14 @@ const Home = () => {
     });
   }, []);
 
+  // Component
   return (
     <Container
+      className="backgroundColor"
       component="div"
       maxWidth="auto"
       style={{
         minHeight: "100vh",
-        backgroundColor: "#00BBDE",
-        color: "white",
         paddingTop: "100px",
       }}
     >
@@ -43,8 +52,25 @@ const Home = () => {
         variant="h2"
         align="center"
         ref={typeWriter}
-        style={{ color: "#C70505" }}
+        style={{ color: "#6F0000", height: "100px" }}
       ></Typography>
+      <Typography
+        variant="h5"
+        align="center"
+        sx={{ paddingTop: { xs: "20vh", md: "40vh" } }}
+      >
+        Check out my projects!
+      </Typography>
+      <Container align="center">
+        <IconButton>
+          <Link
+            to="/projects"
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ArrowCircleDownIcon style={{ width: "70px", height: "70px" }} />
+          </Link>
+        </IconButton>
+      </Container>
     </Container>
   );
 };

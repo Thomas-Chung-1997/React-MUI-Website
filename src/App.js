@@ -1,13 +1,14 @@
-//import "./App.css";
-import "@mui/material";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+// Component imports
 import NavBar from "./Components/NavBar/navBar.jsx";
 import Home from "./Components/Home/home.jsx";
 import AboutMe from "./Components/AboutMe/aboutMe.jsx";
 import Contact from "./Components/Contact/contact.jsx";
+import Projects from "./Components/Projects/projects.jsx";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
+//App component
 function App() {
+  // Component
   return (
     <BrowserRouter>
       <div className="App">
@@ -21,7 +22,7 @@ function App() {
               <AboutMe />
             </Route>
             <Route path="/projects">
-              <div>Projects</div>
+              <Projects />
             </Route>
             <Route path="/contact">
               <Contact />

@@ -1,0 +1,28 @@
+
+.backgroundColor{
+    background-image: linear-gradient(to right bottom, #D6D6D6, #2C2B30);
+}
+
+.primaryColor{
+    background-color:#010101;
+}
+
+.secondaryColor{
+    background-color: #F64C4C;
+}
+
+.textColorBlack{
+    color:#010101;
+}
+
+.textColorWhite{
+    color:#FAF9F6;
+}
+
+.textColorRed{
+    color:#F64C4C;
+}
+
+.textDecorationOff{
+    text-decoration: none;
+}

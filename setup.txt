@@ -3,7 +3,3 @@ cd website
 npm install @mui/material @emotion/react @emotion/styled
 npm install @mui/icons-material
 npm start
-
-Primary color 60%: #00BBDE
-Secondary color 30%: #C70505
-Tetriary color 10%: #007400 #47AA00 #FF9A73 #EDE9D0

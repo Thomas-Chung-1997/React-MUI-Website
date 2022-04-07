@@ -1,17 +1,14 @@
-import {
-  Container,
-  CssBaseline,
-  IconButton,
-  TextField,
-  Typography,
-  Button,
-  Paper,
-  Grid,
-} from "@mui/material";
+import Container from "@mui/material/Container";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import CssBaseline from "@mui/material/CssBaseline";
 import { useState } from "react";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import EmailIcon from "@mui/icons-material/Email";
+import "../../globals.css";
 
 const Contact = () => {
   const [message, setMessage] = useState(false);
@@ -24,10 +21,9 @@ const Contact = () => {
     <Container
       component="div"
       maxWidth="auto"
+      className="backgroundColor"
       style={{
         minHeight: "100vh",
-        backgroundColor: "#00BBDE",
-        color: "white",
         paddingTop: "100px",
       }}
     >
@@ -79,15 +75,15 @@ const Contact = () => {
           <Button
             type="submit"
             variant="contained"
-            color="primary"
             size="medium"
+            style={{ backgroundColor: "#F64C4C", color: "#010101" }}
           >
             Send
           </Button>
         </form>
       </Container>
       <Typography variant="h2" align="center" my={4}>
-        &zwnj; {message && <span>Sent!</span>}
+        &zwnj; {message && <span>Sending...</span>}
       </Typography>
       <Container align="center">
         <IconButton

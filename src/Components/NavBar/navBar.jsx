@@ -10,11 +10,36 @@ import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import { CssBaseline } from "@mui/material";
+import CssBaseline from "@mui/material/CssBaseline";
 import { Link } from "react-router-dom";
+import "../../globals.css";
 
 // NavBar component
 const NavBar = () => {
+  // Variables
+  const pages = [
+    {
+      name: "Home",
+      key: "Home",
+      link: "/",
+    },
+    {
+      name: "Projects",
+      key: "Projects",
+      link: "/projects",
+    },
+    {
+      name: "About Me",
+      key: "AboutMe",
+      link: "/aboutMe",
+    },
+    {
+      name: "Contact",
+      key: "Contact",
+      link: "/contact",
+    },
+  ];
+
   // Event handlers
   const [anchorElNav, setAnchorElNav] = React.useState(null);
 
@@ -30,7 +55,7 @@ const NavBar = () => {
   return (
     <AppBar position="fixed">
       <CssBaseline />
-      <Container maxWidth="{false}" style={{ backgroundColor: "#C70505" }}>
+      <Container maxWidth="{false}" className="primaryColor textColorRed">
         <Toolbar disableGutters>
           <Typography
             variant="h6"
@@ -40,7 +65,6 @@ const NavBar = () => {
           >
             Thomas.Chung
           </Typography>
-
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
               size="large"
@@ -70,51 +94,18 @@ const NavBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {/* {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography textAlign="center">{page}</Typography>
+              {pages.map((page) => (
+                <MenuItem key={page.key} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <Link
+                      to={page.link}
+                      style={{ textDecoration: "none", color: "black" }}
+                    >
+                      {page.name}
+                    </Link>
+                  </Typography>
                 </MenuItem>
-              ))} */}
-              <MenuItem key="Home" onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
-                  <Link
-                    to="/"
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
-                    Home
-                  </Link>
-                </Typography>
-              </MenuItem>
-              <MenuItem key="Projects" onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
-                  <Link
-                    to="/projects"
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
-                    Projects
-                  </Link>
-                </Typography>
-              </MenuItem>
-              <MenuItem key="AboutMe" onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
-                  <Link
-                    to="/aboutMe"
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
-                    About Me
-                  </Link>
-                </Typography>
-              </MenuItem>
-              <MenuItem key="Contact" onClick={handleCloseNavMenu}>
-                <Typography textAlign="center">
-                  <Link
-                    to="/contact"
-                    style={{ textDecoration: "none", color: "black" }}
-                  >
-                    Contact
-                  </Link>
-                </Typography>
-              </MenuItem>
+              ))}
             </Menu>
           </Box>
           <Typography
@@ -126,60 +117,17 @@ const NavBar = () => {
             Thomas.Chung
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {/* {pages.map((page) => (
+            {pages.map((page) => (
               <Button
-                key={page}
+                key={page.key}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "block" }}
+                sx={{ my: 2, display: "block" }}
               >
-                <Link to={"/" + page}>{page}</Link>
+                <Link to={page.link} className="textColorRed textDecorationOff">
+                  {page.name}
+                </Link>
               </Button>
-            ))} */}
-            <Button
-              key="Home"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, display: "block" }}
-            >
-              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-                Home
-              </Link>
-            </Button>
-            <Button
-              key="Projects"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, display: "block" }}
-            >
-              <Link
-                to="/projects"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                Projects
-              </Link>
-            </Button>
-            <Button
-              key="About Me"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, display: "block" }}
-            >
-              <Link
-                to="/aboutMe"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                About Me
-              </Link>
-            </Button>
-            <Button
-              key="Contact"
-              onClick={handleCloseNavMenu}
-              sx={{ my: 2, display: "block" }}
-            >
-              <Link
-                to="/contact"
-                style={{ textDecoration: "none", color: "white" }}
-              >
-                Contact
-              </Link>
-            </Button>
+            ))}
           </Box>
         </Toolbar>
       </Container>
